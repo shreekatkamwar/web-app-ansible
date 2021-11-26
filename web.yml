@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks: 
+    - name: install httpd
+      package: name=httpd state=installed
+    - name: configure web services
+      shell: "echo Welcome to Shree Server - Training  > /var/www/html/index.html"
+    - name: start service
+      service: name=httpd state=started
